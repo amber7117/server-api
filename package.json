@@ -30,7 +30,7 @@
     "postinstall-run:win32": "if %NODE_ENV% == \"production\"  if EXIST src  ( npm run build) "
   },
   "engines": {
-    "node": "10.16.3"
+    "node": "16"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
