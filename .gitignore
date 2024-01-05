@@ -1,0 +1,12 @@
+/dist
+/logs
+/npm-debug.log
+/node_modules
+.DS_Store
+package-lock.json
+.yarn.lock
+.env
+.idea
+.now
+/src/keys
+/src/certs

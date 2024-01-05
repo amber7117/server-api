@@ -1,0 +1,2932 @@
+{
+	"info": {
+		"_postman_id": "d0dc6cfc-d65d-41c4-9db5-2ae960e96d51",
+		"name": "SERVICE_JOB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Server Configuration",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"mailgun\",\n    \"value\": {\n        \"apiKey\": \"key-beb558019b050bd778aea6d5d9a93142\",\n        \"domain\": \"bestigegroup.com\"\n    },\n    \"description\": \"Mailgun Configuration\",\n    \"package\": \"email\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/server-config",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"server-config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/server-config/2168ec58-6a39-427d-905c-320b00a1d93f",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"server-config",
+								"2168ec58-6a39-427d-905c-320b00a1d93f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/server-config",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"server-config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"age\": 26\n}\n    "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/server-config/2168ec58-6a39-427d-905c-320b00a1d93f",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"server-config",
+								"2168ec58-6a39-427d-905c-320b00a1d93f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/server-config/274f604b-280e-47c0-85e9-e636e42d3b74",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"server-config",
+								"274f604b-280e-47c0-85e9-e636e42d3b74"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Web Client Configuration",
+			"item": [
+				{
+					"name": "Get Full Configuration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/web-client-config/all",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"web-client-config",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"crudScreens\",\n    \"value\": [\n    \t{\n    \t\t\"api\" : \"apps\",\n    \t\t\"title\" : \"Title\"\n    \t}\n    ],\n    \"description\": \"Title for Landing Page\",\n    \"package\": \"home\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/web-client-config",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"web-client-config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/web-client-config/2168ec58-6a39-427d-905c-320b00a1d93f",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"web-client-config",
+								"2168ec58-6a39-427d-905c-320b00a1d93f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/web-client-config",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"web-client-config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"age\": 26\n}\n    "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/web-client-config/2168ec58-6a39-427d-905c-320b00a1d93f",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"web-client-config",
+								"2168ec58-6a39-427d-905c-320b00a1d93f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/web-client-config/a012590c-5eb0-44e7-8673-94caa6c56c71",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"web-client-config",
+								"a012590c-5eb0-44e7-8673-94caa6c56c71"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Storage",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Test.png\",\n\t\"type\" : \"image\",\n\t\"file\" : \"data:image/png;base64,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\",\n\t\"fileCode\" : \"profilePicture\"\n\t\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/storage",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create via binary",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "multipart/form-data",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test1.mp4",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "image",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/storage",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/storage/download/fcfcf10d-aca3-492c-ab3b-e165b03676ed",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage",
+								"download",
+								"fcfcf10d-aca3-492c-ab3b-e165b03676ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/storage/2a88fd37-d9bd-41f1-b792-4295efd7b8f9",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage",
+								"2a88fd37-d9bd-41f1-b792-4295efd7b8f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/storage",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"age\": 26\n}\n    "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/storage/2168ec58-6a39-427d-905c-320b00a1d93f",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage",
+								"2168ec58-6a39-427d-905c-320b00a1d93f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/storage/0a3095b5-36c8-4972-8f80-9b6edbdfaa53,bd04e30a-4bbe-4061-830e-41a5d548a723",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"storage",
+								"0a3095b5-36c8-4972-8f80-9b6edbdfaa53,bd04e30a-4bbe-4061-830e-41a5d548a723"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Emails",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"subject\":\"Hello\",\n\t\"to\" : \"idsingh43@gmail.com\",\n\t\"template\" : \"welcome\",\n\t\"from\" : \"admin@laxaar.com\",\n\t\"data\" : {\n\t\t\"name\" : \"Inderdeep Singh 1\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/emails",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create By Type",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"subject\":\"Hello\",\n\t\"to\" : \"idsingh43@gmail.com\",\n\t\"type\" : \"welcome\",\n\t\"data\" : {\n\t\t\"name\" : \"Inderdeep Singh 1\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/emails",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1NjI5OWQ3YTI2ODE0NWJkOWJiMjA2Zjg4ODlkYWMwMjg0NjhmZTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXJpdmFhLXdlYjJhcHAiLCJhdWQiOiJhcml2YWEtd2ViMmFwcCIsImF1dGhfdGltZSI6MTU1MTI2MDIyNCwidXNlcl9pZCI6Ill5QU9LWG9yZG9Wa25mVXFHQ2J2eGZxZnJpNDMiLCJzdWIiOiJZeUFPS1hvcmRvVmtuZlVxR0NidnhmcWZyaTQzIiwiaWF0IjoxNTUxMjYwMjI0LCJleHAiOjE1NTEyNjM4MjQsImVtYWlsIjoiaWRzaW5naDQzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJpZHNpbmdoNDNAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.VzeTMzR--8izp0j7n4Ta25E5WJu0NFjxCgJnPx8_xTsmaIwWlolTytEBuwIU-nrSftBOjyFIjErDlbIpJOoq9hGFiGcvnTkQ0t7X8_Iswbl-T8lI0TNdG85spi09P4Wn5gt_bUv_dRuVmIzS6b0G4z9VH04je7Pas9_-czhW3JK6lZMiWdzunNY-XNJbmBYzd2ZpX9rXSs0wO-KWdZwvCIHpb-SMrX9VmevfU8VzV60aYlGgsYIwog_17QOd9vF1dOXo0-hVjnAa56S5l9r_SIgkL_TGDfejRqodYRdhlf2_iidcnUCcn9hlkQitP_9pqsfB6HIdRn3ZlGVDvnygKg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/customers/7ae43da6-e266-408b-9ab9-adac5e64c4df",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"customers",
+								"7ae43da6-e266-408b-9ab9-adac5e64c4df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/emails",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"age\": 26,\n\t\"name\": \"Piyush\"\n}\n    "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/generic/customers/8a6303d6-a0fd-44fd-a4f6-67a1fb1b340d",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"generic",
+								"customers",
+								"8a6303d6-a0fd-44fd-a4f6-67a1fb1b340d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/emails/029504d9-578d-464f-aaac-f512b1f46784,0778ea64-6bb9-4abc-827c-22a506fe5fb9,3084b340-9769-44e6-a982-f75ff725d39b,a353c1a3-8bac-41f9-8f6a-dc40cd8a4b10",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"emails",
+								"029504d9-578d-464f-aaac-f512b1f46784,0778ea64-6bb9-4abc-827c-22a506fe5fb9,3084b340-9769-44e6-a982-f75ff725d39b,a353c1a3-8bac-41f9-8f6a-dc40cd8a4b10"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "41c142f7-bb94-4f70-98e2-c9cfee63e4a2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "504025f3-f4ed-47bb-8ff7-9c228f367f88",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"code\":\"role2\",\n\t\"description\" : \"Role 2\",\n\t\"parentRole\" : \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/roles",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1NjI5OWQ3YTI2ODE0NWJkOWJiMjA2Zjg4ODlkYWMwMjg0NjhmZTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXJpdmFhLXdlYjJhcHAiLCJhdWQiOiJhcml2YWEtd2ViMmFwcCIsImF1dGhfdGltZSI6MTU1MTI2MDIyNCwidXNlcl9pZCI6Ill5QU9LWG9yZG9Wa25mVXFHQ2J2eGZxZnJpNDMiLCJzdWIiOiJZeUFPS1hvcmRvVmtuZlVxR0NidnhmcWZyaTQzIiwiaWF0IjoxNTUxMjYwMjI0LCJleHAiOjE1NTEyNjM4MjQsImVtYWlsIjoiaWRzaW5naDQzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJpZHNpbmdoNDNAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.VzeTMzR--8izp0j7n4Ta25E5WJu0NFjxCgJnPx8_xTsmaIwWlolTytEBuwIU-nrSftBOjyFIjErDlbIpJOoq9hGFiGcvnTkQ0t7X8_Iswbl-T8lI0TNdG85spi09P4Wn5gt_bUv_dRuVmIzS6b0G4z9VH04je7Pas9_-czhW3JK6lZMiWdzunNY-XNJbmBYzd2ZpX9rXSs0wO-KWdZwvCIHpb-SMrX9VmevfU8VzV60aYlGgsYIwog_17QOd9vF1dOXo0-hVjnAa56S5l9r_SIgkL_TGDfejRqodYRdhlf2_iidcnUCcn9hlkQitP_9pqsfB6HIdRn3ZlGVDvnygKg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/roles/7ae43da6-e266-408b-9ab9-adac5e64c4df",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"7ae43da6-e266-408b-9ab9-adac5e64c4df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/roles",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\" : \"Role 1\",\n\t\"parentRole\" : \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/roles/8a6303d6-a0fd-44fd-a4f6-67a1fb1b340d",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"8a6303d6-a0fd-44fd-a4f6-67a1fb1b340d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/roles/029504d9-578d-464f-aaac-f512b1f46784,0778ea64-6bb9-4abc-827c-22a506fe5fb9,3084b340-9769-44e6-a982-f75ff725d39b,a353c1a3-8bac-41f9-8f6a-dc40cd8a4b10",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"029504d9-578d-464f-aaac-f512b1f46784,0778ea64-6bb9-4abc-827c-22a506fe5fb9,3084b340-9769-44e6-a982-f75ff725d39b,a353c1a3-8bac-41f9-8f6a-dc40cd8a4b10"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "87e4f629-c992-408d-8bc3-da3b10231bff",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d54c23d-2950-4904-93f3-ea979a063bcb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"admin@laxaar.com\",\n\t\"password\" : \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/authentication",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"authentication"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Test User\",\n\t\"email\" : \"piyush.sharma9934@laxaar.com\",\n\t\"password\" : \"Test@123\",\n\t\"phoneNumber\" : \"+917115660949\",\n\t\"dob\" : 9999999999,\n\t\"photoURL\" : \"http://cyphrum-api.herokuapp.com/api/storage/download/0bf49ee3-bd61-49d4-8994-439f34462096\",\n\t\"role\" : \"test\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/register",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/users?count=1000",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/users/PWQSa8mGpbYWl88ou2waTokrqKU2",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"PWQSa8mGpbYWl88ou2waTokrqKU2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/users/current/get",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"current",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":\"local\",\n\t\"name\" : \"yash garg\",\n\t\"role\":\"CUSTOMER\",\n\t\"email\" : \"ygarg_be16@thapar.edu\",\n\t\"password\" : \"123456\",\n\t\"phoneNumber\" : \"+911234567890\"\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/users",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"emailVerified\" : false\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/users/JsSHS7Cs7oQboncPSjK3xuv4Cfv2",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"JsSHS7Cs7oQboncPSjK3xuv4Cfv2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"oldPassword\":\"Test@123\",\n\t\"password\" : \"1234567\",\n\t\"name\" : \"Inderdeep Singh\",\n\t\"email\" : \"admin1@test.com\",\n\t\"phoneNumber\" : \"+918146660344\"\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/users/current/update",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"current",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/users/WcHIQraJWcW7lsKe3IlHIdtwuq52",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"WcHIQraJWcW7lsKe3IlHIdtwuq52"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User Profiles",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/profiles",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/profiles/PWQSa8mGpbYWl88ou2waTokrqKU2",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles",
+								"PWQSa8mGpbYWl88ou2waTokrqKU2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User Profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/profiles/current/get",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles",
+								"current",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/profiles/JsSHS7Cs7oQboncPSjK3xuv4Cfv2",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles",
+								"JsSHS7Cs7oQboncPSjK3xuv4Cfv2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current User Profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"notifications\":true,\n\t\"dob\" : 123456790,\n\t\"category\" : \"Test\",\n\t\"restaurantName\" : \"Test Restaurant\",\n\t\"workLocation\" : {\n\t\t\"lat\" : 123,\n\t\t\"long\" : 234,\n\t\t\"name\" : \"Test Restaurant\"\n\t},\n\t\"status\" : \"I am working over here\"\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/profiles/current/update",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles",
+								"current",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/profiles/qE7r180zLrWzqiJ1lO8wePAS7W13",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles",
+								"qE7r180zLrWzqiJ1lO8wePAS7W13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address\":\"a\",\n\t\"companyName\":\"A\",\n\t\"email\":\"piyush@gmail.com\",\n\t\"emailToSendCertificates\":\"a@a.com\",\n\t\"fax\":\"123456789012\",\n\t\"gasSafeCardNo\":\"123\",\n\t\"name\":\"piyush\",\n\t\"phone\":\"123456789012\",\n\t\"dateTime\":\"15689798784\",\n\t\"altEmailToSendCertificates\":\"piyush@gmail.com\",\n\t\"sign\":\"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==\"\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/profiles/current/company",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"profiles",
+								"current",
+								"company"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Password Reset",
+			"item": [
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\" : \"test@123\",\n\t\"verificationCode\" : 789623\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/password-reset/1a58b1d4-1943-4141-95a6-2e98d7d67e27",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"password-reset",
+								"1a58b1d4-1943-4141-95a6-2e98d7d67e27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/password-reset/21037c84-b449-44df-a33c-fc252ca1cb6b",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"password-reset",
+								"21037c84-b449-44df-a33c-fc252ca1cb6b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"admin@laxaar.com\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/password-reset",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"password-reset"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d8a2b58d-97f9-45b8-b227-ee190f264e3f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1121d6e-ada2-454e-8af9-e24ec22d5404",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Confirm Email",
+			"item": [
+				{
+					"name": "Send Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"piyush.sharma@laxaar.com\",\n\t\"name\" : \"Piyush Sharma\",\n\t\"uid\" : \"f4zniDup0LdLWvWzdgEgKI4fTAB3\"\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/confirm-email/",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"confirm-email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"idsingh43@gmail.com\",\n\t\"name\" : \"Inderdeep Singh\",\n\t\"uid\" : \"JsSHS7Cs7oQboncPSjK3xuv4Cfv2\"\n} "
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/confirm-email/resend",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"confirm-email",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Confirmation Status",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/confirm-email/fasdfs",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"confirm-email",
+								"fasdfs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email Confirmation",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/confirm-email/check/r167khXRo7WRAnQao3UDOigvLA43",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"confirm-email",
+								"check",
+								"r167khXRo7WRAnQao3UDOigvLA43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"verificationCode\" : 361116\n}"
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/confirm-email/8fba02b0-0bbe-4ea4-b86f-4759c9411ab8",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"confirm-email",
+								"8fba02b0-0bbe-4ea4-b86f-4759c9411ab8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9518da87-75ad-491a-9c1f-4c0cda1ce20e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a97e4dd5-d67d-4e6c-a362-cfbbe3621d1a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Parts",
+			"item": [
+				{
+					"name": "FIND",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/parts/e82e391b-c702-4338-a168-5e79c8203adb",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"parts",
+								"e82e391b-c702-4338-a168-5e79c8203adb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"make\":\"tata\",\n\t\"model\":\"ps1\",\n\t\"colour\":\"brown\",\n\t\"variant\":\"box\",\n\t\"name\":\"clinch\",\n\t\"description\":\"sadsad\",\n\t\"price\":52.1,\n\t\"product\":[\"yash\",\"garg\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/parts",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"parts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"make\":\"update ho gya \",\n\t\"model\":\"ps1\",\n\t\"colour\":\"brown\",\n\t\"variant\":\"box\",\n\t\"name\":\"clinch\",\n\t\"description\":\"sadsad\",\n\t\"price\":52.1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/parts/e82e391b-c702-4338-a168-5e79c8203adb",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"parts",
+								"e82e391b-c702-4338-a168-5e79c8203adb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/parts/e82e391b-c702-4338-a168-5e79c8203adb",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"parts",
+								"e82e391b-c702-4338-a168-5e79c8203adb"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "FIND",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/products",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"key\":\"1\",\n\t\"make\":\"tata\",\n\t\"model\":\"ps1\",\n\t\"colour\":\"brown\",\n\t\"description\":\"sadsad\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/products",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"make\":\"update  Ho gya\",\n\t\"model\":\"ps1\",\n\t\"colour\":\"brown\",\n\t\"description\":\"sadsad\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/products/1",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/products/1",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products-Services",
+			"item": [
+				{
+					"name": "FIND",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/product-services",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"product-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"tata\",\n\t\"description\":\"ps1\",\n\t\"price\":\"brown\",\n\t\"enabled\":true,\n\t\"product\":[\"yash\",\"garg\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/product-services",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"product-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"update ho gya\",\n\t\"description\":\"ps1\",\n\t\"price\":\"brown\",\n\t\"enabled\":true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/product-services/bbc9bef9-a116-4c4a-bd2c-f938a97ddbb8",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"product-services",
+								"bbc9bef9-a116-4c4a-bd2c-f938a97ddbb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/product-services/bbc9bef9-a116-4c4a-bd2c-f938a97ddbb8",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"product-services",
+								"bbc9bef9-a116-4c4a-bd2c-f938a97ddbb8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/customer",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"key\":\"917986022961\",\n\t\"customerName\":\"karan\",\n\t\"address\":\"doraha\",\n\t\"homeNumber\":\"917986022961\",\n\t\"officeNumber\":\"917986022961\",\n\t\"email\":\"yashco6112@gmail.com\",\n\t\"products\":[\"1\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/customer",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/service?search=JBkzo6QSuXWN2xhTXk7zY3ajerP2&searchField=assignedTo",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"service"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "JBkzo6QSuXWN2xhTXk7zY3ajerP2"
+								},
+								{
+									"key": "searchField",
+									"value": "assignedTo"
+								},
+								{
+									"key": "search",
+									"value": "QJyahVDgqzPKwz8ak2G9jnW7SCI2",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "operator",
+									"value": "equals",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"SERVIS-000024\",\n    \"date\": \"2020-05-18T05:42:41.216Z\",\n    \"corporateNumber\": \"9988048230\",\n    \"customer\": \"917986022961\",\n    \"productType\": \"yash\",\n    \"productBrand\": \"12345\",\n    \"model\": \"12345\",\n    \"serialNumber\": \"12345\",\n    \"jobStatus\": \"pending\",\n    \"parts\": [{\n    \t\"partKey\":\"1\",\n        \"partName\": \"12345\",\n        \"partCost\":20\n    },{\n    \t\"partKey\":\"1\",\n        \"partName\": \"12345\",\n        \"partCost\":20\n    },{\n    \t\"partKey\":\"1\",\n        \"partName\": \"12345\",\n        \"partCost\":20\n    }],\n    \"labourTransportCosts\":500,\n    \"assignedTo\":[\"JBkzo6QSuXWN2xhTXk7zY3ajerP2\",\"QJyahVDgqzPKwz8ak2G9jnW7SCI2\"],\n    \"discount\":123\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/service",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/service/getJobByCustomerId?customerId=yash",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"getJobByCustomerId"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "yash"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCurrent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/service/getJobByCustomerId?customerId=yash",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"getJobByCustomerId"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "yash"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jobStatus\":\"started working\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/service/busService",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"busService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"ygarg_be16@thapar.edu\",\n\t\"phoneNo\":\"917986022961\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/service/send/",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"send",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "INvoice",
+			"item": [
+				{
+					"name": "GEt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"key\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/invoice",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInvoiceByCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendInvoice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "billTo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"ygarg_be16@thapar.edu\",\n\t\"billTo\":\"yash garg\",\n\t\"phoneNo\":\"917986022961\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/invoice/billTo/yashTractorNava",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"invoice",
+								"billTo",
+								"yashTractorNava"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sms",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template\": \"yash\",\n    \"data\": {\n        \"serviceKey\": \"truck repair\",\n        \"customer\":{\"customerName\":\"yash\"},\n        \"key\":\"truck\"\n    },\n    \"to\": \"917986022961\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/sms",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"sms"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sms-template",
+			"item": [
+				{
+					"name": "POST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Contact",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\":\"Sample Message\",\n\t\"email\":\"piyush.sharma@laxaar.com\",\n\t\"name\":\"Piyush Sharma\"\n}"
+				},
+				"url": {
+					"raw": "{{SERVER}}/api/contact",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"api",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "configration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6d4d32c1-5ee1-4573-8e84-a31149e00212",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5aeb033d-5046-486b-839c-cfa67fef20bd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

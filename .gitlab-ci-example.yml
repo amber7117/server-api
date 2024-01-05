@@ -1,0 +1,78 @@
+image: node:10
+
+stages:
+    - build
+    - deploy
+
+.buildTemplate: &buildTemplate
+  stage: build
+  allow_failure: false
+  script:
+    - apt-get update -qy
+    - apt-get install -yqq zip
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+.deployTemplate: &deployTemplate
+  image: ruby:latest
+  stage: deploy
+  script:
+    - cd dist
+    - apt-get update -qy
+    - apt-get install -yqq jq
+    - if [[ -z "${APP_NAME}" ]]; then
+    -   export APP_NAME=$(cat package.json | jq -r .deployment)
+    - fi
+    - echo "Deployment name - ${APP_NAME}"    
+    - export RESPONSE=$(curl -w "%{http_code}\\n" -u ":$API_KEY" "https://api.heroku.com/apps/$APP_NAME" -H "Content-Type:application/json" -H "Accept:application/vnd.heroku+json; version=3" -s -o /dev/null)
+    - if [ $RESPONSE = "200" ]; then 
+    -   echo "Heroku App Found." 
+    - else 
+    -   echo "Heroku App Not Found. Creating it." 
+    -   FIREBASE_ADMIN_CONFIG=$(sed 's/"/\\"/g' <<< "$FIREBASE_ADMIN_CONFIG")
+    -   FIREBASE_ADMIN_CONFIG=${FIREBASE_ADMIN_CONFIG//'\n'/'\\n'} 
+    -   FIREBASE_CONFIG=$(sed 's/"/\\"/g' <<< "$FIREBASE_CONFIG")
+    -   FIREBASE_CONFIG=${FIREBASE_CONFIG//'\n'/'\\n'} 
+    -   curl -u ":$API_KEY" -n -X POST https://api.heroku.com/apps -d "{ \"name\":\"$APP_NAME\",\"region\":\"us\",\"stack\":\"heroku-18\"}" -H "Content-Type:application/json" -H "Accept:application/vnd.heroku+json; version=3" 
+    -   curl -u ":$API_KEY" -n -X PUT "https://api.heroku.com/apps/$APP_NAME/buildpack-installations" -d "{ \"updates\":[{\"buildpack\":\"https://github.com/dscout/wkhtmltopdf-buildpack.git\"},{\"buildpack\":\"heroku/nodejs\"}]}" -H "Content-Type:application/json" -H "Accept:application/vnd.heroku+json; version=3"
+    -   curl -u ":$API_KEY" -n -X PATCH "https://api.heroku.com/apps/$APP_NAME/config-vars" -d "{\"FIREBASE_ADMIN_CONFIG\":\"$FIREBASE_ADMIN_CONFIG\",\"FIREBASE_CONFIG\":\"$FIREBASE_CONFIG\"}" -H "Content-Type:application/json" -H "Accept:application/vnd.heroku+json; version=3"
+    - fi
+    - apt-get install git -yqq
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$APP_NAME --api-key=$API_KEY --skip-cleanup
+  dependencies:
+    - build
+
+build:
+  <<: *buildTemplate
+  only:
+    - master
+  environment:
+    name: development
+    
+deploy:
+  <<: *deployTemplate
+  only:
+    - master
+  environment:
+    name: development   
+  dependencies:
+    - build
+    
+build_production:
+  <<: *buildTemplate
+  only:
+    - production
+  environment:
+    name: production    
+deploy_production:
+  <<: *deployTemplate
+  only:
+    - production
+  environment:
+    name: production
+  dependencies:
+    - build_production 
